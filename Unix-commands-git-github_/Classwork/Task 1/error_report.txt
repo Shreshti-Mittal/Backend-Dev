@@ -1,0 +1,4 @@
+app.log:Error invalid credentials
+error.log:ERROR Database connection failed
+error.log:error timeout occurred
+error.log:ERROR Null pointer exception
