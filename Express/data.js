@@ -1,0 +1,26 @@
+export const userData = [
+    {
+        id:1,
+        name:"Shreshti",
+        city:"Agra"
+    },
+    {
+        id:2,
+        name:"Aditya",
+        city:"Bihar"
+    },
+    {
+        id:3,
+        name:"Arya",
+        city:"Nanital"
+    },
+    {
+        id:4,
+        name:"Swati",
+        city:"UP"
+    },{
+        id:5,
+        name:"Vidhi",
+        city:"Delhi"
+    }
+];
