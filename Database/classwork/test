@@ -1,0 +1,89 @@
+1. What are the advantages of using Mongoose over the native MongoDB driver?
+
+Answer:
+
+Schema-based structure → You can define schema (like table structure)
+Validation → Required fields, data types, default values
+Middleware support → Hooks before/after save, update
+Easier queries → Cleaner syntax than native driver
+Relationships → Supports population (populate())
+
+2. Difference between findOneAndUpdate() and updateOne()
+
+findOneAndUpdate()
+
+Finds document and returns it
+Can return updated document
+Works like find + update together
+
+updateOne()
+
+Only updates document
+Does not return updated document
+Returns update status (matched count)
+
+3. Purpose of Middleware in Mongoose
+
+Answer:
+Middleware allows you to run functions automatically before or after database operations
+
+Examples:
+
+Before saving password → hash it
+After save → log data
+Before delete → check dependencies
+
+Types:
+
+pre middleware → runs before
+post middleware → runs after
+
+
+4. How to implement pagination in Mongoose?
+
+Use:
+
+skip()
+limit()
+
+Formula:
+
+skip = (page - 1) * limit
+
+const page=2;
+const limit=10;
+Model.find()
+     .skip((page-1)*limit)
+     .limit(limit)
+
+5. When to use Embedding vs Referencing in MongoDB?
+Embedding (Nested documents)
+
+Use when:
+
+Data is related
+Always fetched together
+Small size
+
+Example:
+
+User
+ └── address (inside document)
+Referencing (Using ObjectId)
+
+Use when:
+
+Data is large
+Used independently
+Many-to-many relationships
+
+Example:
+
+User -> postId -> Posts collection
+
+Comparison:
+
+Embedding	Referencing
+Faster reads	Flexible
+No joins needed	Supports large data
+Data duplication	Normalized data
